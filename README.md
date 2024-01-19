@@ -69,7 +69,7 @@ Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
                 ws.Cells(Summary_Table_Row, 11).Value = PercentageChange 'With respect to indexing, Column 12 is where percent change data is assigned on the spreadsheet
                 ws.Cells(Summary_Table_Row, 12).Value = TS_Volume 'With respect to indexing, Column 13 is where the total stock volume data is assigned to on the spreadsheet
 
-                If YearlyChange <= 0 Then     'If the yearly change is less than or equal to zero, the color in column 10 is set to red. Vice versa, otherwise, assign green
+                If YearlyChange <= 0 Then     'If the yearly change is less than or equal to zero, the color in column 11 is set to red. Vice versa, otherwise, assign green
                     ws.Cells(Summary_Table_Row, 10).Interior.Color = RGB(255, 0, 0)
                 Else
                     ws.Cells(Summary_Table_Row, 10).Interior.Color = RGB(0, 255, 0)
