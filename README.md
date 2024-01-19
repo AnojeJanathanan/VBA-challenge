@@ -69,7 +69,7 @@ Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
                 ws.Range("K" & Summary_Table_Row).Value = PercentageChange 'With respect to indexing, Column 12 is where percent change data is assigned on the spreadsheet
                 ws.Range("L" & Summary_Table_Row).Value = TS_Volume 'With respect to indexing, Column 13 is where the total stock volume data is assigned to on the spreadsheet
 
-                If YearlyChange <= 0 Then     'If the yearly change is less than or equal to zero, the color in column 11 is set to red. Vice versa, otherwise, assign green
+                If YearlyChange <= 0 Then     'If the yearly change/percentage change is less than or equal to zero, the color in column 11 is set to red. Vice versa, otherwise, assign green
                     ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(255, 0, 0)
                 Else
                     ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(0, 255, 0)
@@ -110,6 +110,6 @@ Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
         ws.Range("R4").Value = Lowest_Ticker_Result 'Below 0, as its a negative percentage
         ws.Range("R5").Value = Highest_Volume_Ticker_Result 'Greatest volume
 
-        ws.Range("A1:L1").Offset(0, 0).HorizontalAlignment = xlCenter 'Horizontally aligns the text accordingly, excludes the percentage increase/decrease values on the far right under columns R/S
+        ws.Range("A1:L1").Offset(0, 0).HorizontalAlignment = xlCenter 'Horizontally aligns the text accordingly
     Next ws
 End Sub
