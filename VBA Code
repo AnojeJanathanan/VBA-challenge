@@ -30,7 +30,7 @@ Sub ModuleTwo()  'Created by Anoje J
             TS_Volume = TS_Volume + ws.Cells(i, 7).Value
 
             If ws.Cells(i + 1, 1).Value <> Ticker Then
-                ws.Cells(Summary_Table_Row, 9).Value = Ticker
+                ws.Range("I" & Summary_Table_Row).Value = Ticker
                 ClosedPrice = ws.Cells(i, 6).Value
 
                 If OpenedPrice <> 0 Then
@@ -41,14 +41,14 @@ Sub ModuleTwo()  'Created by Anoje J
 
                 YearlyChange = ClosedPrice - OpenedPrice
 
-                ws.Cells(Summary_Table_Row, 10).Value = YearlyChange
-                ws.Cells(Summary_Table_Row, 11).Value = PercentageChange
-                ws.Cells(Summary_Table_Row, 12).Value = TS_Volume
+                ws.Range("J" & Summary_Table_Row).Value = YearlyChange
+                ws.Range("K" & Summary_Table_Row).Value = PercentageChange
+                ws.Range("L" & Summary_Table_Row).Value = TS_Volume
 
                 If YearlyChange <= 0 Then
-                    ws.Cells(Summary_Table_Row, 10).Interior.Color = RGB(255, 0, 0)
+                    ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(255, 0, 0)
                 Else
-                    ws.Cells(Summary_Table_Row, 10).Interior.Color = RGB(0, 255, 0)
+                    ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(0, 255, 0)
                 End If
 
                 If PercentageChange > Highest_Result Then
@@ -80,6 +80,6 @@ Sub ModuleTwo()  'Created by Anoje J
         ws.Range("R4").Value = Lowest_Ticker_Result
         ws.Range("R5").Value = Highest_Volume_Ticker_Result
 
-        ws.Range("A1:L1").Offset(0, 0).HorizontalAlignment = xlCenter
+        ws.Range("A1:S1").Offset(0, 0).HorizontalAlignment = xlCenter
     Next ws
 End Sub
