@@ -1,6 +1,26 @@
-# The Purpose of this code is to analyze the provided stock data across the three provided worksheets in Microsoft Excel using VBA. This code loops throughout all 3 worksheets and calculates different metrics per stock (Percent Change, Yearly Change, and Total Stock Volume) based off of the tickers provided. Moreover, the data results from the script are summarized/outputted in the table alongside extra information for further analysis purposes: These include 'Greatest % Increase', 'Greatest % Decrease', and 'Greatest Total Volume'. Once again, the script is put together in a way that the information is presented in correspondence to each sheet. 
+#Solution For My VBA Code
 
-#Here is the commented code for further clarification
+#The Purpose of this code is to analyze the provided stock data across the three provided worksheets in Microsoft Excel using VBA. This code loops throughout all 3 worksheets and calculates different metrics per stock (Percent Change, Yearly Change, and Total Stock Volume) based off of the tickers provided. Moreover, the data results from the script are summarized/outputted in the table alongside extra information for further analysis purposes: These include 'Greatest % Increase', 'Greatest % Decrease', and 'Greatest Total Volume'. Once again, the script is put together in a way that the information is presented in correspondence to each sheet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
     Dim ws As Worksheet
