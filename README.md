@@ -54,7 +54,7 @@ Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
             TS_Volume = TS_Volume + ws.Cells(i, 7).Value
 
             If ws.Cells(i + 1, 1).Value <> Ticker Then
-                ws.Cells(Summary_Table_Row, 9).Value = Ticker
+                ws.Range("I" & Summary_Table_Row).Value = Ticker
                 ClosedPrice = ws.Cells(i, 6).Value
 
                 If OpenedPrice <> 0 Then   'Allows the calculation of the % change as long as the open price is not equal to zero
@@ -65,14 +65,14 @@ Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
 
                 YearlyChange = ClosedPrice - OpenedPrice  'This represents that yearly change result is based off the difference of closed price and opened price
 
-                ws.Cells(Summary_Table_Row, 10).Value = YearlyChange 'With respect to indexing, Column 11 is where yearly change data is assigned to on the spreadsheet
-                ws.Cells(Summary_Table_Row, 11).Value = PercentageChange 'With respect to indexing, Column 12 is where percent change data is assigned on the spreadsheet
-                ws.Cells(Summary_Table_Row, 12).Value = TS_Volume 'With respect to indexing, Column 13 is where the total stock volume data is assigned to on the spreadsheet
+                ws.Range("J" & Summary_Table_Row).Value = YearlyChange 'With respect to indexing, Column 11 is where yearly change data is assigned to on the spreadsheet
+                ws.Range("K" & Summary_Table_Row).Value = PercentageChange 'With respect to indexing, Column 12 is where percent change data is assigned on the spreadsheet
+                ws.Range("L" & Summary_Table_Row).Value = TS_Volume 'With respect to indexing, Column 13 is where the total stock volume data is assigned to on the spreadsheet
 
                 If YearlyChange <= 0 Then     'If the yearly change is less than or equal to zero, the color in column 11 is set to red. Vice versa, otherwise, assign green
-                    ws.Cells(Summary_Table_Row, 10).Interior.Color = RGB(255, 0, 0)
+                    ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(255, 0, 0)
                 Else
-                    ws.Cells(Summary_Table_Row, 10).Interior.Color = RGB(0, 255, 0)
+                    ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(0, 255, 0)
                 End If
 
                 If PercentageChange > Highest_Result Then 'These codes are set to showcase the percentages as long as they satisfy the conditions below and updates the values accordingly
