@@ -75,6 +75,12 @@ Sub ModuleTwo() 'Initialize variables 'Created by Anoje J
                     ws.Range("J" & Summary_Table_Row).Interior.Color = RGB(0, 255, 0)
                 End If
 
+                If PercentageChange <= 0 Then
+                    ws.Range("K" & Summary_Table_Row).Interior.Color = RGB(255, 0, 0)
+                Else
+                    ws.Range("K" & Summary_Table_Row).Interior.Color = RGB(0, 255, 0)
+                End If
+
                 If PercentageChange > Highest_Result Then 'These codes are set to showcase the percentages as long as they satisfy the conditions below and updates the values accordingly
                     Highest_Result = PercentageChange
                     Highest_Ticker_Result = Ticker
